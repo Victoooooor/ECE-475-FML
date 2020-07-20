@@ -31,7 +31,7 @@ class RR():
             self.standard.append(max(RR.x, key=lambda k: k[i])[i])
         RR.x = np.array(RR.x)/np.array(self.standard)
         RR.x = RR.x-self.x.mean(axis=0)
-
+        RR.x = RR.x*10
     def cal_beta(self,lamda):
         self.XM = np.matrix(RR.x)
         self.YM = np.matrix(RR.y).transpose()
