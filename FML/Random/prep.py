@@ -13,9 +13,9 @@ class FL():
         if yname:
             inputx = list(set(FL.data.columns)-set([yname]))
             FL.data[inputx] = FL.data[inputx]/FL.data[inputx].max()
-        diction = {'Iris-setosa': 0, 'Iris-versicolor': 1}
-        FL.data[4].replace(diction, inplace=True)
         FL.size = len(FL.data.index)
+        diction = {'M': 1, 'I': 0, 'F': 2}
+        FL.data[0].replace(diction, inplace=True)
         p1=int(FL.size*0.8)
         p2=int(FL.size*0.9)
         FL.data[:p1].to_csv(train_name,index=False,header=False)
